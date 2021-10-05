@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		윌리를 찾아라
+	</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{margin: 0; background-size: cover; 
+			font-family: 'Ultra', serif;}
+		.absolute{display: block; position: absolute;}
+		.wally{padding: 30px 5px; background-color:transparent; border :none; color: transparent; font-size: 7px;}
+		.morning{background: #ffe773; width:100px; height: 30px;
+			font-size: 15px; color: #ff765b;
+		text-align: center; border : 0.5px; border-radius: 15
+		z-index:10;
+	font-family: 'Ultra', serif;}
+
+	
+		#clock{color: yellow;  font-size: 60px; text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;}
+
+	</style>
+</head>
+<body>
+	<div id="clock" class="clock absolute"
+		style="top:40px; left:1250px;"></div>
+	<body id="nfind" background ="2.png";>
+	<img src="title.png" class="title absolute " width="600px"style="top:px; left:px;">
+	<button id="wally" class="wally absolute" style="top:265px; left:1310px;" z-index:10;>w</button>
+
+	
+<div>
+	<button id="morningBut" class="morning absolute" style="top:130px; left:50px;" z-index:10;>START</button>
+
+	<audio id="morningSnd"src="1.mp3"></audio>
+</div>
+	
+
+		<script type="text/javascript">
+		var state = false;
+		wally.onclick = function(){
+			if(state ==  false){nfind.background = "3.png";
+			state = true;} }
+
+  
+		var state = true;
+		morningBut.onclick = function(){
+			if(state)
+			{morningSnd.play();
+				state = false;} 
+				else {morningSnd.pause();
+					state = true;}
+				}
+
+   
+			setInterval(makeDate, 100);
+			makeDate();
+			function makeDate(){
+			var time = new Date();
+			var t = time.getHours();
+			var y = time.getMinutes();
+			var u = time.getSeconds();
+			var output =t+":"+y+":"+u;
+			
+			document.getElementById("clock").innerHTML=output;
+			}
+			
+
+			
+
+
+
+</script>
+</body>
+</html>
